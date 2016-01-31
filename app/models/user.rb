@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
                       format: { with: VALID_EMAIL_REGEX },
                       uniqueness: { case_sensitive: false }
     has_secure_password
+    
+    has_many :posts
+    
+    def posts
+        Post.where(user_id: self.id)
+    end
 end

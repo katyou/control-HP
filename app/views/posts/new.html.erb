@@ -1,0 +1,14 @@
+<h1>投稿</h1>
+
+<div class = "col-md-8 col-md-offset-2">
+    <%= form_for(@post) do |f| %>
+    
+      <%= f.label :タイトル %>
+      <%= f.text_field :title, class:"form control"%>
+      
+      <%= f.label :内容 %>
+      <%= f.text_area :content, class: "form-control" %>
+    
+      <%= f.submit "投稿", class: "btn btn-primary" %>
+    <% end %>
+</div>

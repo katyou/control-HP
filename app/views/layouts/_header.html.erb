@@ -13,7 +13,8 @@
             <ul class="dropdown-menu">
               <li class="divider"></li>
               <li>
-                <%= link_to "ユーザー詳細", edit_user_path(current_user) %>
+                <%= link_to "ユーザー", "#" %>
+                <%= link_to "ユーザー編集", edit_user_path(current_user) %>
                 <%= link_to "ログアウト", logout_path, method: "delete" %>
               </li>
             </ul>
