@@ -21,6 +21,20 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def update
+    @user = User.find(params[:id])
+    if current_user != @user
+      redirect_to root_path
+      return
+    end
+    
+    if @user.update(user_params)
+      redirect_to root_path , notice: '更新しました'
+    else
+      render 'edit'
+    end
+  end
     
   
   private
