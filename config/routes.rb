@@ -6,9 +6,15 @@ Rails.application.routes.draw do
   post 'login' , to: 'sessions#create'
   delete 'logout' , to: 'sessions#destroy'
   
-  resources :users
+  resources :users do
+    member do
+      get 'posting'
+    end
+  end
+  
   resources :sessions, only:[:new, :create, :destroy]
   resources :posts
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -64,4 +70,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

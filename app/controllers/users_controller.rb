@@ -35,6 +35,11 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  
+  def posting
+    @user = User.find(params[:id])
+    @posts = @user.post.content
+  end
     
   
   private
